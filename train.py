@@ -10,6 +10,7 @@ def run_training(model, train_loader, val_loader, optimizer, scheduler, device, 
     criterion = GaussianNLLLoss()
     patience = config.get("patience", 30)
     best_val_loss = float('inf')
+    best_epoch = 0
     epochs_without_improvement = 0
     save_path = config["save_path"]
 
@@ -35,14 +36,16 @@ def run_training(model, train_loader, val_loader, optimizer, scheduler, device, 
         if val_loss < best_val_loss:
             best_val_loss = val_loss
             torch.save(model.state_dict(), save_path)
+            best_epoch = epoch
             print(f"Saved best model at epoch {epoch}")
             epochs_without_improvement = 0
         else:
             epochs_without_improvement += 1
 
         if epochs_without_improvement >= patience:
-            print(f"Early stopping triggered. Restoring best model from epoch {epoch - patience + 1}")
-            model.load_state_dict(torch.load(save_path))
+            print(f"Early stopping triggered. Restoring best model from epoch {best_epoch}")
+            model.load_state_dict(torch.load(save_path, map_location=device))
+            model.to(device)
             break
 
 def evaluate(model, loader, criterion, device):

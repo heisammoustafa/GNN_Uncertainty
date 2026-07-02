@@ -82,8 +82,10 @@ def fit_and_apply_scalers(dataset_tr, dataset_val, dataset_te):
   
 
 def get_dataset():
+  import os
+  base_dir = os.path.dirname(os.path.abspath(__file__))
   # Load configuration
-  with open("config.yaml", "r") as f:
+  with open(os.path.join(base_dir, "config.yaml"), "r") as f:
       config = yaml.safe_load(f)
       
   batch_size = config["batch_size"]
@@ -94,59 +96,59 @@ def get_dataset():
   data_y = []
   edge_index_raw = []
   
-  with open(f"PKL/data_x_edge_length_var.pkl", "rb") as file:
+  with open(os.path.join(base_dir, "PKL/data_x_edge_length_var.pkl"), "rb") as file:
       data_x_trial = pickle.load(file)
       data_x.extend(data_x_trial)
       
-  with open(f"PKL/data_y_edge_length_var.pkl", "rb") as file:
+  with open(os.path.join(base_dir, "PKL/data_y_edge_length_var.pkl"), "rb") as file:
       data_y_trial = pickle.load(file)
       data_y.extend(data_y_trial)
       
-  with open(f"PKL/edge_index_edge_length_var.pkl", "rb") as file:
+  with open(os.path.join(base_dir, "PKL/edge_index_edge_length_var.pkl"), "rb") as file:
       edge_index_raw_trial = pickle.load(file)
       edge_index_raw.extend(edge_index_raw_trial)
       
   for i in range(1, 4):
-      with open(f"PKL/data_x_{i}_V3.pkl", "rb") as file:
+      with open(os.path.join(base_dir, f"PKL/data_x_{i}_V3.pkl"), "rb") as file:
           data_x_trial = pickle.load(file)
           data_x.extend(data_x_trial)
           
-      with open(f"PKL/data_y_{i}_V3.pkl", "rb") as file:
+      with open(os.path.join(base_dir, f"PKL/data_y_{i}_V3.pkl"), "rb") as file:
           data_y_trial = pickle.load(file)
           data_y.extend(data_y_trial)
           
-      with open(f"PKL/edge_index_{i}_V3.pkl", "rb") as file:
+      with open(os.path.join(base_dir, f"PKL/edge_index_{i}_V3.pkl"), "rb") as file:
           edge_index_raw_trial = pickle.load(file)
           edge_index_raw.extend(edge_index_raw_trial)
   
   # Load _bigger datasets
-  with open(f"PKL/data_x_bigger.pkl", "rb") as file:
+  with open(os.path.join(base_dir, "PKL/data_x_bigger.pkl"), "rb") as file:
       data_x_big = pickle.load(file) 
       data_x.extend(data_x_big)
   
-  with open(f"PKL/data_y_bigger.pkl", "rb") as file:
+  with open(os.path.join(base_dir, "PKL/data_y_bigger.pkl"), "rb") as file:
       data_y_big = pickle.load(file)
       data_y.extend(data_y_big)
   
-  with open(f"PKL/edge_index_bigger.pkl", "rb") as file:
+  with open(os.path.join(base_dir, "PKL/edge_index_bigger.pkl"), "rb") as file:
       edge_index_raw_big = pickle.load(file)
       edge_index_raw.extend(edge_index_raw_big)
   
   # Load _bigger datasets
-  with open(f"PKL/data_x_bigger2.pkl", "rb") as file:
+  with open(os.path.join(base_dir, "PKL/data_x_bigger2.pkl"), "rb") as file:
       data_x_big = pickle.load(file)
       data_x.extend(data_x_big)
   
-  with open(f"PKL/data_y_bigger2.pkl", "rb") as file:
+  with open(os.path.join(base_dir, "PKL/data_y_bigger2.pkl"), "rb") as file:
       data_y_big = pickle.load(file)
       data_y.extend(data_y_big)
   
-  with open(f"PKL/edge_index_bigger2.pkl", "rb") as file:
+  with open(os.path.join(base_dir, "PKL/edge_index_bigger2.pkl"), "rb") as file:
       edge_index_raw_big = pickle.load(file)
       edge_index_raw.extend(edge_index_raw_big)
       
   # Load _bigger datasets
-  with open(f"PKL/data_x_fisch_2.pkl", "rb") as file:
+  with open(os.path.join(base_dir, "PKL/data_x_fisch_2.pkl"), "rb") as file:
       data_x_big = pickle.load(file)
       for graph in range(len(data_x_big)):
           for grain in range(len(data_x_big[graph])):
@@ -158,11 +160,11 @@ def get_dataset():
               data_x_big[graph][grain][7] =  data_x_big[graph][grain][7]/  data_x_big[graph][grain][14]**2
       data_x.extend(data_x_big)
   
-  with open(f"PKL/data_y_fisch_2.pkl", "rb") as file:
+  with open(os.path.join(base_dir, "PKL/data_y_fisch_2.pkl"), "rb") as file:
       data_y_big = pickle.load(file)
       data_y.extend(data_y_big)
   
-  with open(f"PKL/edge_index_fisch_2.pkl", "rb") as file:
+  with open(os.path.join(base_dir, "PKL/edge_index_fisch_2.pkl"), "rb") as file:
       edge_index_raw_big = pickle.load(file)
       edge_index_raw.extend(edge_index_raw_big)
   

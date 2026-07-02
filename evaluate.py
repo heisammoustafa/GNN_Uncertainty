@@ -18,8 +18,11 @@ def load_model(path, input_dim, edge_dim):
 # Basic evaluation
 def evaluate(loader, model, scaler=None):
     predictions, true_values = [], []
+    device = next(model.parameters()).device
+    model.eval()
     with torch.no_grad():
         for data in loader:
+            data = data.to(device)
             mu, _ = model(data)
             pred = mu.cpu().numpy()
             true = data.y.view(-1, 1).cpu().numpy()
@@ -33,6 +36,8 @@ def evaluate(loader, model, scaler=None):
 # Evaluation with uncertainty
 def evaluate_with_uncertainty(loader, model, num_samples, device, scaler=None):
     model.eval()
+    # Determine the device the model is currently on
+    device = next(model.parameters()).device
     for m in model.modules():
         if m.__class__.__name__.startswith('Dropout'):
             m.train()

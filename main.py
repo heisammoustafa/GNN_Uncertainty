@@ -95,7 +95,7 @@ def main():
       "Residual plot of GNN model ($\\mu_0 H_c$)",
       "5-fold CV",
       "cv_predictions",
-      Path("/home/moustafa/Documents/Clemens_Paper/Github/Coercivity_Prediction_Uncertainty/")
+      Path(".")
   )
   
   
