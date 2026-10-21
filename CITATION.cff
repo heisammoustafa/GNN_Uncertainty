@@ -101,3 +101,20 @@ references:
         given-names: H.
     doi: "10.5281/zenodo.23360688"
     repository-code: "https://github.com/heisammoustafa/Micromagnetic_GNN"
+  - type: dataset
+    title: "Dataset and publication: Modelling magnetic material properties with uncertainty-aware neural networks (GNN coercivity study)"
+    authors:
+      - family-names: Moustafa
+        given-names: H.
+      - family-names: Wager
+        given-names: C.
+      - family-names: Kovacs
+        given-names: A.
+      - family-names: Ali
+        given-names: Q.
+      - family-names: Oezelt
+        given-names: H.
+      - family-names: Schrefl
+        given-names: T.
+    year: 2026
+    doi: "10.5281/zenodo.23544171"

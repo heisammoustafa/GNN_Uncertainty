@@ -10,6 +10,8 @@ By executing `main.py`, the code trains the models, evaluates predictive perform
 
 This repository accompanies the graph-neural-network study (Section 5 and Appendix 9) of the article [Modelling magnetic material properties with uncertainty-aware neural networks](https://doi.org/10.1016/j.commatsci.2026.115073) (*Computational Materials Science* 276, 115073, 2027). See [Citation](#citation) below.
 
+The exact figure files of the paper (Fig. 18A and 18B) and the published article are archived on Zenodo: [10.5281/zenodo.23544171](https://doi.org/10.5281/zenodo.23544171).
+
 ## Installation
 
 ```bash
@@ -32,7 +34,7 @@ The script trains the model for ten seeds (123 to 132); a validation split is us
 - `confidence_curve_Hc_all_samples.png`: confidence curve over the ten seeds (Fig. 18B)
 - `best_epoch.txt`, `weights_seed_*.pt`: number of epochs and the trained weights
 
-Small deviations from the numbers in the paper can occur, depending on hardware and library versions.
+Small deviations from the numbers in the paper can occur, depending on hardware and library versions. The figure files of the paper can be used as a reference: [10.5281/zenodo.23544171](https://doi.org/10.5281/zenodo.23544171).
 
 `reproduce_fig18.py` and the plotting modules in `paper_plots/` are copies of `scripts/train_model_Hc_gnn_uncertainty.py` and `src/evaluation/` of the repository [wagerc97/magnetic-uncertainty](https://github.com/wagerc97/magnetic-uncertainty) (commit `9ed8c2d`, author: C. Wager), which uses this repository as a git submodule. Only the path handling and the imports were changed; the training and evaluation protocol is unchanged.
 
