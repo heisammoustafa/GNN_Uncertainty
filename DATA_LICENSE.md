@@ -14,7 +14,7 @@ This license applies to:
 
 The source code in this repository is **not** covered by this license. It is licensed separately under the MIT License (see [LICENSE](LICENSE)).
 
-The published article (Wager et al., 2027), which is attached to the Zenodo record of this repository, is open access under CC BY 4.0 (© 2026 The Authors).
+The published article (Wager et al., 2027) is open access under CC BY 4.0 (© 2026 The Authors). It is archived on Zenodo together with the exact figures of the paper (Fig. 18); see the README for the DOI.
 
 ## Origin of the data
 
