@@ -19,9 +19,24 @@ micromamba activate pub-gnn-unc
 
 ## Reproducing the results of the paper
 
-The results reported in the paper (ten seeds, validation split used once to select the number of epochs) were produced with `scripts/train_model_Hc_gnn_uncertainty.py` of the repository [wagerc97/magnetic-uncertainty](https://github.com/wagerc97/magnetic-uncertainty). That repository uses this repository as a git submodule, pinned to commit `6b6b559`, the last change to the code in this repository before the release.
+The results and the figure of the graph-neural-network study (Fig. 18: parity/residual plots and confidence curve) are reproduced with
 
-`python main.py` is a stand-alone example: it trains the model for ten seeds, writes the confidence curves to `confidence_plots/`, and then runs a 5-fold cross-validation with a parity plot (`cv_predictions`). It does not follow exactly the protocol of the paper.
+```bash
+python reproduce_fig18.py
+```
+
+The script trains the model for ten seeds (123 to 132); a validation split is used once to select the number of epochs, which is then reused for all seeds. It uses a GPU if one is available. The output is written to `out_reproduce_fig18/`:
+
+- `metrics_by_seed.csv`, `metrics_summary_across_seeds.csv`: MAE, MSE, RMSE and R² per seed and averaged
+- `Hc_test_*_unc_hexbin.png` and `Hc_train_*_unc_hexbin.png`: parity and residual plots of the representative seed 123, coloured by the total, epistemic or aleatoric uncertainty (Fig. 18A)
+- `confidence_curve_Hc_all_samples.png`: confidence curve over the ten seeds (Fig. 18B)
+- `best_epoch.txt`, `weights_seed_*.pt`: number of epochs and the trained weights
+
+Small deviations from the numbers in the paper can occur, depending on hardware and library versions.
+
+`reproduce_fig18.py` and the plotting modules in `paper_plots/` are copies of `scripts/train_model_Hc_gnn_uncertainty.py` and `src/evaluation/` of the repository [wagerc97/magnetic-uncertainty](https://github.com/wagerc97/magnetic-uncertainty) (commit `9ed8c2d`, author: C. Wager), which uses this repository as a git submodule. Only the path handling and the imports were changed; the training and evaluation protocol is unchanged.
+
+`python main.py` is a stand-alone example: it trains the model for ten seeds, writes the confidence curves to `confidence_plots/`, and then runs a 5-fold cross-validation with a parity plot (`cv_predictions`). It does not follow exactly the protocol of the paper. The plotting code of this repository (`model_evaluation.py`, `confidence.py`) produced the example figures in `confidence_plots/` and `Coercivity_Prediction_Uncertainty/`; these are not the figures of the paper.
 
 Note on the other files in the root folder:
 
