@@ -1,0 +1,103 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the paper below."
+type: software
+title: "GNN_Uncertainty"
+abstract: "Graph neural network that predicts the coercivity of hard magnetic microstructures with aleatoric and epistemic uncertainty estimates (Gaussian negative log-likelihood loss and Monte Carlo dropout). Code and data for the graph-neural-network study of the article 'Modelling magnetic material properties with uncertainty-aware neural networks'."
+repository-code: "https://github.com/heisammoustafa/GNN_Uncertainty"
+license: MIT
+# doi: "10.5281/zenodo.XXXXXXX"  # concept DOI of the Zenodo record; add after the first release is archived
+authors:
+  - family-names: Moustafa
+    given-names: H.
+    orcid: "https://orcid.org/0009-0005-9251-5494"
+    affiliation: "Department for Integrated Sensor Systems, University for Continuing Education Krems, Viktor Kaplan-Straße 2, Wiener Neustadt, 2700, Austria"
+  - family-names: Wager
+    given-names: C.
+    orcid: "https://orcid.org/0009-0009-9128-2704"
+    affiliation: "Department for Integrated Sensor Systems, University for Continuing Education Krems, Viktor Kaplan-Straße 2, Wiener Neustadt, 2700, Austria; Christian Doppler Laboratory for Magnet Design through Physics-Informed Machine Learning, Viktor Kaplan-Straße 2, Wiener Neustadt, 2700, Austria"
+  - family-names: Kovacs
+    given-names: A.
+    orcid: "https://orcid.org/0000-0002-8413-1950"
+    affiliation: "Department for Integrated Sensor Systems, University for Continuing Education Krems, Viktor Kaplan-Straße 2, Wiener Neustadt, 2700, Austria"
+  - family-names: Ali
+    given-names: Q.
+    orcid: "https://orcid.org/0000-0002-0870-2803"
+    affiliation: "Department for Integrated Sensor Systems, University for Continuing Education Krems, Viktor Kaplan-Straße 2, Wiener Neustadt, 2700, Austria; Christian Doppler Laboratory for Magnet Design through Physics-Informed Machine Learning, Viktor Kaplan-Straße 2, Wiener Neustadt, 2700, Austria"
+  - family-names: Oezelt
+    given-names: H.
+    orcid: "https://orcid.org/0000-0002-3754-3565"
+    affiliation: "Department for Integrated Sensor Systems, University for Continuing Education Krems, Viktor Kaplan-Straße 2, Wiener Neustadt, 2700, Austria"
+  - family-names: Schrefl
+    given-names: T.
+    orcid: "https://orcid.org/0000-0002-0871-0520"
+    affiliation: "Department for Integrated Sensor Systems, University for Continuing Education Krems, Viktor Kaplan-Straße 2, Wiener Neustadt, 2700, Austria; Christian Doppler Laboratory for Magnet Design through Physics-Informed Machine Learning, Viktor Kaplan-Straße 2, Wiener Neustadt, 2700, Austria"
+preferred-citation:
+  type: article
+  title: "Modelling magnetic material properties with uncertainty-aware neural networks"
+  authors:
+    - family-names: Wager
+      given-names: C.
+    - family-names: Moustafa
+      given-names: H.
+    - family-names: Kovacs
+      given-names: A.
+    - family-names: Ali
+      given-names: Q.
+    - family-names: Oezelt
+      given-names: H.
+    - family-names: Yamano
+      given-names: H.
+    - family-names: Yano
+      given-names: M.
+    - family-names: Sakuma
+      given-names: N.
+    - family-names: Hosoi
+      given-names: H.
+    - family-names: Kinoshita
+      given-names: A.
+    - family-names: Shoji
+      given-names: T.
+    - family-names: Kato
+      given-names: A.
+    - family-names: Schrefl
+      given-names: T.
+  journal: "Computational Materials Science"
+  volume: 276
+  start: 115073
+  year: 2027
+  issn: "0927-0256"
+  doi: "10.1016/j.commatsci.2026.115073"
+  url: "https://doi.org/10.1016/j.commatsci.2026.115073"
+references:
+  - type: article
+    title: "Graph neural networks to predict coercivity and maximum energy product of hard magnetic microstructures"
+    authors:
+      - family-names: Moustafa
+        given-names: H.
+      - family-names: Kovacs
+        given-names: A.
+      - family-names: Fischbacher
+        given-names: J.
+      - family-names: Gusenbauer
+        given-names: M.
+      - family-names: Ali
+        given-names: Q.
+      - family-names: Breth
+        given-names: L.
+      - family-names: Schrefl
+        given-names: T.
+      - family-names: Oezelt
+        given-names: H.
+    journal: "Journal of Magnetism and Magnetic Materials"
+    volume: 634
+    start: 173594
+    year: 2025
+    issn: "0304-8853"
+    doi: "10.1016/j.jmmm.2025.173594"
+  - type: software
+    title: "Micromagnetic_GNN (origin of the data in PKL/)"
+    authors:
+      - family-names: Moustafa
+        given-names: H.
+    doi: "10.5281/zenodo.23360688"
+    repository-code: "https://github.com/heisammoustafa/Micromagnetic_GNN"

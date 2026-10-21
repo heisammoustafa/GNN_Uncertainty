@@ -1,0 +1,7 @@
+# Keep the data in the git repository, but leave it out of release archives
+# (GitHub "Download ZIP" / release zip, and therefore the Zenodo archive).
+# The same files are archived at https://doi.org/10.5281/zenodo.23360688 (see README, section "Data").
+PKL/ export-ignore
+dataset_tr.pt export-ignore
+dataset_val.pt export-ignore
+dataset_te.pt export-ignore
